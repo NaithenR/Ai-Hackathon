@@ -19,29 +19,28 @@ function App() {
     setResults(null)
 
     try {
-      const response = await fetch('http://localhost:3001/analyze', {
+      const response = await fetch('http://localhost:3000/interactions/check', {
         method: 'POST',
-        headers: {
+       headers: {
           'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ medications, allergies, profile }),
+       },
+       body: JSON.stringify({ medications, allergies, profile }),
       })
       const data = await response.json()
       setResults(data)
       setLoading(false)
-    }
-    catch (error) {
+    } catch (error) {
       console.error('Error:', error)
       setLoading(false)
     }
   }
   
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="h-screen bg-gray-50 flex flex-col overflow-hidden">
       <Header />
 
       {/* This div holds the sidebar and results panel side by side */}
-      <div className="flex flex-1">
+      <div className="flex flex-1 overflow-hidden">
 
         {/*Sidebar is the left side panel where the user inputs*/}
         <Sidebar

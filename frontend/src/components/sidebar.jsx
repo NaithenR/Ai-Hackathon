@@ -98,7 +98,7 @@ function Sidebar({ medications, setMedications, allergies, setAllergies, profile
             onChange={(e) => setProfile({ ...profile, sex: e.target.value })}
             className="border border-gray-200 rounded-lg px-3 h-10 text-sm focus:outline-none focus:border-green-500 text-gray-600"
           >
-            <option value="">Biological sex</option>
+            <option value="">Sex</option>
             <option>Male</option>
             <option>Female</option>
             <option>Other</option>

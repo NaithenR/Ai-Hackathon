@@ -7,6 +7,10 @@ app.get('/', (req, res) => {
     res.send('Medication App API Running');
 });
 
+const orchestrateRoutes = require('./routes/orchestrate');
+
+app.use('/orchestrate', orchestrateRoutes);
+
 const interactionRoutes = require('./routes/interactions');
 
 app.use('/interactions', interactionRoutes);
